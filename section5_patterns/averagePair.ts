@@ -2,7 +2,7 @@
 // 항상 오름차순 정렬, 음수도 있음
 function averagePair(inputList: number[], avrg: number) {
   let pointer1 = 0;
-  let pointer2 = 1;
+  let j = inputList.length - 1;
 
   let result = false;
 
@@ -10,14 +10,23 @@ function averagePair(inputList: number[], avrg: number) {
     return result;
   }
 
-  // for (let i = 0; i < inputList.length - 1; i++) {
-  //   if ((inputList[i] + inputList[pointer2]) / 2 === avrg) {
-  //     return (result = true);
-  //   } else {
-  //     pointer2 += 1;
-  //   }
-  // }
+  for (let i = 0; i < inputList.length - 1; i++) {
+    if ((inputList[i] + inputList[j]) / 2 === avrg) {
+      return (result = true);
+    }
+
+    if ((inputList[i] + inputList[j]) / 2 > avrg) {
+      j -= 1;
+    }
+
+    if ((inputList[i] + inputList[j]) / 2 === avrg) {
+      return (result = true);
+    }
+  }
+
+  return result;
 }
+console.log(averagePair([1, 2, 3], 2.5));
 
 // averagePair([1,2,3],2.5) // true
 // averagePair([1,3,3,5,6,7,10,12,19],8) // true

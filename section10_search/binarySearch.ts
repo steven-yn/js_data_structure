@@ -2,7 +2,7 @@ function binarySearch(list: number[] | string[], target: number | string) {
   let leftPointer = 0;
   let rightPointer = list.length - 1;
   let middlePointer = Math.floor((rightPointer + leftPointer) / 2);
-
+  const asd = Array.from({ length: 10 }, (_, i) => i + 1);
   while (
     list[leftPointer] !== target &&
     list[middlePointer] !== target &&
@@ -46,10 +46,7 @@ console.log(
 ); // 2
 console.log(
   binarySearch(
-    [
-      5, 6, 10, 13, 14, 18, 30, 34, 35, 37, 40, 44, 64, 79, 84, 86, 95, 96, 98,
-      99,
-    ],
+    [5, 6, 10, 13, 14, 18, 30, 34, 35, 37, 40, 44, 64, 79, 84, 86, 95, 96, 98],
     95
   )
 ); // 16
